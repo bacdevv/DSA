@@ -137,6 +137,11 @@ int heightTree(node* root) {
     return height;
 }
 
+int countNodes(node* root) {
+    if (root == nullptr) return 0;
+    return 1 + countNodes(root->left) + countNodes(root->right);
+}
+
 int main () {
     node* root = nullptr;
 
@@ -172,6 +177,10 @@ int main () {
     // tim chieu cao cay
     int heightTree = findHeight(root);
     cout << "Height: " << heightTree << endl;
+
+    // tinh so node
+    int totalNodes = countNodes(root);
+    cout << "Total nodes: " << totalNodes << endl;
 
     return 0;
 }

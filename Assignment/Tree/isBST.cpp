@@ -14,36 +14,35 @@ node* makeNode(int data) {
     return newNode;
 }
 
-bool IsSubtreeLesser(node* root, int value) {
+bool isBSTUtil(node* root, int min, int max) {
     if (root == nullptr) return true;
-    if (root->data <= value && IsSubtreeLesser(root->left, value) && IsSubtreeLesser(root->right, value)) {
-        return true;
-    }
-    else return false;
-}
-
-bool IsSubtreeGreater(node* root, int value) {
-    if (root == nullptr) return true;
-    if (root->data <= value && IsSubtreeGreater(root->left, value) && IsSubtreeGreater(root->right, value)) {
-        return true;
-    }
-    else return false;
-}
-
-bool IsBinarySearchTree(node* root) {
-    if (root == nullptr) return true;
-
-    if (IsSubtreeLesser(root->left,root->data) && IsSubtreeGreater(root->right, root->data) && IsBinarySearchTree(root->left) && IsBinarySearchTree(root->right)) {
-        return true;
-    }
-    else {
-        return false;
-    }
+    if (root->data < min || root->data > max) return false;
+    return isBSTUtil(root->left, root->data, max) && isBSTUtil(root->right, min, root->data);
 }
 
 int main () {
-    node* root = nullptr;
+    // Example usage:
+    node* root = makeNode(10);
+    root->left = makeNode(5);
+    root->right = makeNode(15);
+    root->left->left = makeNode(2);
+    root->left->right = makeNode(7);
+    root->right->right = makeNode(20);
 
+    /*
+        The tree structure is:
+              10
+             /  \
+            5    15
+           / \     \
+          2   7     20
+    */
     
+    if (isBSTUtil(root, INT_MIN, INT_MAX)) {
+        cout << "The tree is a Binary Search Tree." << endl;
+    } else {
+        cout << "The tree is not a Binary Search Tree." << endl;
+    }
+
     return 0;
 }
