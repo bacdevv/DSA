@@ -1,0 +1,12 @@
+{
+	"C_Cpp.errorSquiggles": "disabled",
+	"files.associations": {
+		"deque": "cpp",
+		"string": "cpp",
+		"unordered_map": "cpp",
+		"vector": "cpp",
+		"array": "cpp",
+		"string_view": "cpp",
+		"span": "cpp"
+	}
+}

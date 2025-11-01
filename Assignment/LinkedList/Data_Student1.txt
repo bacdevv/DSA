@@ -1,0 +1,9 @@
+3565,Nguyen Hoang Anh Quang,Male,6.52
+7877,Le Van Quang Quang,Male,4.25
+4677,Nguyen Tran Viet Anh,Male,5.06
+9356,Pham Tan Lan Anh,Female,9.23
+1951,Duong Gia Bao,Male,8.33
+6762,Lu Gia Bao,Male,7.53
+5546,Nguyen Thi Bich Duyen,Female,5.08
+1378,Ngo Duc Bao,Male,5.57
+1512,La Trung Dung,Male,5.67
