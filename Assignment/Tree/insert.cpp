@@ -49,7 +49,7 @@ node* makeNode(int data) {
 void insert(node*& root, int data) {
     if (root == nullptr) {
         root = makeNode(data);
-        return;
+        return;     
     }
 
     node* current = root;
